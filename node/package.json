@@ -1,0 +1,7 @@
+{
+  "name": "signupvet-node-example",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": { "start": "node example.js" }
+}

@@ -30,7 +30,9 @@ Full API reference: [signupvet.com/docs](https://www.signupvet.com/docs) · Open
 | [`node/`](node/signup-check.js) | `checkSignup()` for Node 18+, no dependencies |
 | [`express/`](express/server.js) | Express signup route: block, review or allow |
 | [`nextjs/`](nextjs/app/api/signup/route.ts) | Next.js App Router route handler |
-| [`nextjs-supabase/`](nextjs-supabase/app/api/signup/route.ts) | Next.js + Supabase Auth: check before `supabase.auth.signUp()` |
+| [`nextjs-supabase/`](nextjs-supabase/app/api/signup/route.ts) | Next.js + Supabase Auth: check before `supabase.auth.signUp()`, store the result in `app_metadata` (needs `SUPABASE_SERVICE_ROLE_KEY` on the server) |
+| [`nextjs-clerk/`](nextjs-clerk/lib/signup-gate.ts) | Next.js + Clerk: check each new user once on the server, store the result in `publicMetadata`, ban clear fakes |
+| [`firebase/`](firebase/functions/src/index.ts) | Firebase Authentication blocking function (`beforeUserCreated`): check before the user is created, result as a custom claim (needs Identity Platform) |
 | [`python/`](python/signup_check.py) | `check_signup()` with `requests`, plus a [FastAPI route](python/app.py) |
 
 ## How to use the result
